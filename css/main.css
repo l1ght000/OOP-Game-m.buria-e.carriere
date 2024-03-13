@@ -1,0 +1,169 @@
+p, h1, h2, h3, h4, h5, h6 {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: larger;
+  font-size: 40px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-image: url(/images/Untitled-2.png);
+  background-size: cover;
+  background-position: center;
+  font-family: "Nunito", sans-serif;
+  overflow: hidden;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 20px;
+}
+@media (min-width: 768px) {
+  .container {
+    flex-direction: row;
+  }
+}
+.container .info-box {
+  background: rgba(226, 167, 231, 0.9);
+  margin-bottom: 20px;
+  padding: 20px;
+  border: 2px solid #fff;
+  text-align: center;
+  width: 400px;
+  border-radius: 20px;
+}
+.container .info-box h1 {
+  margin: 0 0 10px 0;
+  font-family: "Vaguely Retro", sans-serif;
+  font-size: 60px;
+  color: #fff;
+  text-shadow: 5px 5px #000000;
+}
+.container .info-box p {
+  margin: 0;
+  font-size: 20px;
+  font-family: "Nunito", sans-serif;
+  font-weight: 700;
+}
+@media (min-width: 768px) {
+  .container .info-box {
+    margin-right: 20px;
+    margin-bottom: 0;
+  }
+}
+.container .game-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 2px solid #fff;
+  padding: 20px;
+  background: rgba(226, 167, 231, 0.9);
+  border-radius: 20px;
+}
+.container .game-box .board-box .board {
+  display: grid;
+  gap: 5px;
+  grid-template-columns: repeat(3, 1fr);
+}
+.container .game-box .board-box .board .cell {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 60px;
+  background-color: #bd9db6;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border: 7px solid #a15da3;
+}
+.container .game-box .board-box .board .cell:hover {
+  background-color: #6c3979;
+}
+.container .game-box .board-box .board .cross {
+  font-size: 60px;
+  font-family: "Nunito", sans-serif;
+  font-weight: 1000;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.container .game-box .board-box .board .circle {
+  font-size: 60px;
+  font-family: "Nunito", sans-serif;
+  font-weight: 1000;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.container .game-box .board-box .board .cross {
+  background-image: linear-gradient(45deg, #ffadad 30%, #ff00ff 100%);
+}
+.container .game-box .board-box .board .circle {
+  background-image: linear-gradient(45deg, #fff27d 0%, #0cff34 100%);
+}
+.container .game-box .text-div {
+  margin-top: 20px;
+  text-align: center;
+}
+.container .game-box .text-div .custom-btn {
+  color: #fff;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-family: "Nunito", sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.5s ease;
+  position: relative;
+  display: inline-block;
+  box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, 0.5), 7px 7px 20px 0px rgba(0, 0, 0, 0.1), 4px 4px 5px 0px rgba(0, 0, 0, 0.1);
+  outline: none;
+}
+.container .game-box .text-div .btn {
+  background: #b621fe;
+  border: none;
+  z-index: 1;
+}
+.container .game-box .text-div .btn:after {
+  position: absolute;
+  content: "";
+  width: 0;
+  height: 100%;
+  top: 0;
+  right: 0;
+  z-index: -1;
+  background-color: #663dff;
+  border-radius: 5px;
+  box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, 0.5), 7px 7px 20px 0px rgba(0, 0, 0, 0.1), 4px 4px 5px 0px rgba(0, 0, 0, 0.1);
+  transition: all 0.5s ease;
+}
+.container .game-box .text-div .btn:hover {
+  color: #fff;
+}
+.container .game-box .text-div .btn:hover:after {
+  left: 0;
+  width: 100%;
+}
+.container .game-box .text-div .btn:active {
+  top: 2px;
+}
+.container .game-box .text-div .msg-indicator {
+  margin-top: 15px;
+}
+.container .game-box .text-div .msg-indicator p {
+  font-size: 20px;
+}
+
+@media (min-width: 768px) {
+  .game-box .board-box .board .cell {
+    width: 100px;
+    height: 100px;
+  }
+  .game-box .board-box .board .cross, .game-box .board-box .board .circle {
+    font-size: 3rem;
+  }
+}/*# sourceMappingURL=main.css.map */
