@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0, width=device-width">
+    <title>Vue Tic Tac Toe</title>
+    <link href="https://fonts.googleapis.com/css?family=Lato%7CRaleway" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/vaguely-retro" rel="stylesheet">
+    <script type="importmap">
+        {
+            "imports": {
+                "vue": "https://unpkg.com/vue@3/dist/vue.esm-browser.prod.js"
+            }
+        }
+    </script>
+    <script type="module" src="js/main.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="info-box">
+            <h1 id="title">tic. tac. toe.</h1>
+            <p>WELCOME<br>
+            It is our new classic game. Try your best to win in this impossible game versus AI.<br>
+        Press "Start New Game" to start your game</p>
+        </div>
+    <div class="grid-con board-game game-box">
+        <div id="app" class="board-box">
+            <section class="board">
+              <div v-for="(row, rowIndex) in board" :key="`row-${rowIndex}`" class="row">
+                <div v-for="(cell, cellIndex) in row" :key="`cell-${cellIndex}`" class="cell" @click="handleCellClick(rowIndex, cellIndex)" :ref="`cell-${rowIndex}-${cellIndex}`">
+                  <span v-if="cell === 'X'" class="cross">{{ cell }}</span>
+                  <span v-else-if="cell === 'O'" class="circle">{{ cell }}</span>
+              </div>
+            </div>
+            </section>
+            <div class="text-div">
+            <button class="custom-btn btn" @:click="startNewGame">Start New Game</button>
+            <div class="msg-indicator"><p class="status">{{ statusMessage }}</p></div>
+            </div>
+        </div>
+    </div>
+</div>
+  
+</body>
+</html>
